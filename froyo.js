@@ -23,3 +23,28 @@ for (const flavor of flavorArray) {
 
 //just wanted to console the table to display the object, property, and associated values
 console.table(flavorCounts);
+console.log(flavorCounts);
+
+function orderCount(anyFroyoOrder){
+    const orders = {};
+
+    for(const froyo of anyFroyoOrder) {
+        if (orders[froyo]) {
+            orders[froyo]++;
+        } else {
+            orders[froyo] = 1;
+        }
+    }
+    return orders;
+}
+// console.log(flavorCounts);
+
+//wanted to try what we did at the end of class with any 
+const userInputFlavors2 = prompt(
+    "Please enter your froyo flavors seperated by commas. Thanks!",
+    "vanilla,vanilla,vanilla,strawberry,coffee,coffee,chocolate,chocolate"
+  );
+  
+  const flavorArray2 = userInputFlavors2.split(",");
+  console.log(orderCount(flavorArray2));
+  console.log(orderCount(flavorArray));
